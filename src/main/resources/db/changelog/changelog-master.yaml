@@ -1,0 +1,18 @@
+databaseChangeLog:  
+   
+   - include:
+       file: DDL/DDL-001.yaml
+       relativeToChangelogFile: true
+   
+   - include:
+       file: DML/DML-001.yaml
+       relativeToChangelogFile: true     
+    
+   - include:
+       file: DDL/DDL-002.yaml
+       relativeToChangelogFile: true 
+       
+   - include:
+       file: DML/DML-002.yaml
+       relativeToChangelogFile: true     
+       

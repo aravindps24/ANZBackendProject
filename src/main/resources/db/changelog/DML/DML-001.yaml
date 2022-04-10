@@ -1,0 +1,72 @@
+databaseChangeLog:
+
+  - changeSet:  
+     id: 2
+     author: Aravind
+     
+     changes:  
+       - insert:  
+          tableName:  customer
+          columns:  
+            - column:  
+               name:  customer_id  
+               valueNumeric:  1
+            - column:  
+               name:  first_name  
+               value:  first
+            - column:  
+               name:  last_name  
+               value:  last
+            - column:  
+               name:  classification  
+               value: HNI
+       
+       - insert:  
+          tableName:  account
+          columns:  
+            - column:  
+               name:  account_number  
+               valueNumeric:  1
+            - column:  
+               name:  customer_id  
+               valueNumeric:  1
+            - column:  
+               name:  account_name  
+               value:  acc001
+            - column:  
+               name:  account_type  
+               value: Savings
+            - column:  
+               name:  balance_date  
+               valueDate: '2022-04-08'
+            - column:  
+               name:  currency  
+               value: AUD
+            - column:  
+               name:  opening_avail_bal  
+               valueNumeric: 1000
+       
+       - insert:  
+          tableName:  transaction
+          columns:  
+            - column:  
+               name:  transaction_id  
+               valueNumeric:  1
+            - column:  
+               name:  account_number  
+               valueNumeric:  1
+            - column:  
+               name:  value_date  
+               valueDate: '2022-04-08'
+            - column:  
+               name:  debit_amount  
+               valueNumeric: 200
+            - column:  
+               name:  credit_amount  
+               valueNumeric: 0
+            - column:  
+               name:  trxn_type  
+               value: Debit
+            - column:  
+               name:  trxn_remarks  
+               value: 

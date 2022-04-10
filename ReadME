@@ -1,0 +1,117 @@
+Start Application:
+-----------------
+Run Spring boot main app - ANZWholesaleBackendApp
+
+Java version used: zulu 17
+Gradle 7.4.2
+
+URL's:
+------
+http://localhost:8080/
+http://localhost:8080/actuator
+
+mysql connect to db:
+--------------------
+connect to mysql DB:
+ mysql -h localhost:3306 -u root -p
+ 
+REST API's:
+------------
+http://localhost:8080/backendApp/api/account/retrieveCustomerAccounts
+http://localhost:8080/backendApp/api/trxn/retrieveAccountTrxns
+
+Profiles:
+--------
+dev, prodA, prodB
+-Dspring-profiles-active=dev
+
+Actuator metrics:
+http://127.0.0.1:8080/backendApp/actuator/*
+
+
+Sample Request Responses:
+-----------------------
+1)
+Account:
+--------
+
+Request:
+--------
+ {
+    "resultsPerPage": 10,
+    "pageNumber": 0,
+    "sortColumn": "accountNumber",
+    "customerId": 1,
+    "customerName": ""
+}
+    
+Response:
+--------
+{
+    "accountList": [
+        {
+            "accountNumber": 1,
+            "customerId": 0,
+            "accountName": "acc001",
+            "accountType": null,
+            "balanceDate": "2022-04-08T00:00:00",
+            "currency": null,
+            "openingBalance": 1000.00
+        }
+    ],
+    "customerInfo": {
+        "firstName": "first",
+        "lastName": "last",
+        "classification": "HNI       "
+    },
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/backendApp/api/account/retrieveCustomerAccounts"
+        }
+    }
+}
+
+2)
+-------------
+Transactions:
+-------------
+Request:
+--------
+
+{
+    "resultsPerPage": 10,
+    "pageNumber": 1,
+    "sortColumn": "transactionId",
+    "customerId": 1,
+    "accountNumber": 1,
+    "customerName": ""
+}
+
+Response:
+--------
+{
+    "account": {
+        "accountNumber": 1,
+        "customerId": 0,
+        "accountName": "acc001",
+        "accountType": null,
+        "balanceDate": "2022-04-08T00:00:00",
+        "currency": null,
+        "openingBalance": 1000.00
+    },
+    "transactions": [
+        {
+            "transactionId": 1,
+            "accountNumber": 0,
+            "valueDate": "2022-04-08T00:00:00",
+            "debitAmount": 200.00,
+            "creditAmount": 0.00,
+            "transactionType": null
+        }
+    ],
+    "_links": {
+        "self": {
+            "href": "http://localhost:8080/backendApp/api/trxn/retrieveAccountTrxns"
+        }
+    }
+}

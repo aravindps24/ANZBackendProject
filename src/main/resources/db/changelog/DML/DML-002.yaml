@@ -1,0 +1,145 @@
+databaseChangeLog:
+
+  - changeSet:  
+     id: 3
+     author: Aravind
+     
+     changes:  
+       - insert:  
+          tableName:  customer
+          columns:  
+            - column:  
+               name:  customer_id  
+               valueNumeric:  2
+            - column:  
+               name:  first_name  
+               value:  John
+            - column:  
+               name:  last_name  
+               value:  Smith
+            - column:  
+               name:  classification  
+               value: LNI
+
+       - insert:  
+          tableName:  account
+          columns:  
+            - column:  
+               name:  account_number  
+               valueNumeric:  2
+            - column:  
+               name:  customer_id  
+               valueNumeric:  1
+            - column:  
+               name:  account_name  
+               value:  acc002
+            - column:  
+               name:  account_type  
+               value: Savings
+            - column:  
+               name:  balance_date  
+               valueDate: '2022-04-09'
+            - column:  
+               name:  currency  
+               value: AUD
+            - column:  
+               name:  opening_avail_bal  
+               valueNumeric: 1100           
+       - insert:  
+          tableName:  account
+          columns:  
+            - column:  
+               name:  account_number  
+               valueNumeric:  3
+            - column:  
+               name:  customer_id  
+               valueNumeric:  2
+            - column:  
+               name:  account_name  
+               value:  acc003
+            - column:  
+               name:  account_type  
+               value: Savings
+            - column:  
+               name:  balance_date  
+               valueDate: '2022-04-09'
+            - column:  
+               name:  currency  
+               value: AUD
+            - column:  
+               name:  opening_avail_bal  
+               valueNumeric: 100           
+       
+       - insert:  
+          tableName:  transaction
+          columns:  
+            - column:  
+               name:  transaction_id  
+               valueNumeric:  2
+            - column:  
+               name:  account_number  
+               valueNumeric:  1
+            - column:  
+               name:  value_date  
+               valueDate: '2022-04-09'
+            - column:  
+               name:  debit_amount  
+               valueNumeric: 0
+            - column:  
+               name:  credit_amount  
+               valueNumeric: 100
+            - column:  
+               name:  trxn_type  
+               value: Credit
+            - column:  
+               name:  trxn_remarks  
+               value: 
+       - insert:  
+          tableName:  transaction
+          columns:  
+            - column:  
+               name:  transaction_id  
+               valueNumeric:  3
+            - column:  
+               name:  account_number  
+               valueNumeric:  2
+            - column:  
+               name:  value_date  
+               valueDate: '2022-04-09'
+            - column:  
+               name:  debit_amount  
+               valueNumeric: 100
+            - column:  
+               name:  credit_amount  
+               valueNumeric: 0
+            - column:  
+               name:  trxn_type  
+               value: Debit
+            - column:  
+               name:  trxn_remarks  
+               value: 
+       - insert:  
+          tableName:  transaction
+          columns:  
+            - column:  
+               name:  transaction_id  
+               valueNumeric:  4
+            - column:  
+               name:  account_number  
+               valueNumeric:  2
+            - column:  
+               name:  value_date  
+               valueDate: '2022-04-09'
+            - column:  
+               name:  debit_amount  
+               valueNumeric: 0
+            - column:  
+               name:  credit_amount  
+               valueNumeric: 300
+            - column:  
+               name:  trxn_type  
+               value: Credit
+            - column:  
+               name:  trxn_remarks  
+               value:                
+               
