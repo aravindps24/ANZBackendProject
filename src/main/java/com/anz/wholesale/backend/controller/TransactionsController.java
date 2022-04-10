@@ -22,7 +22,7 @@ public class TransactionsController {
 	@Autowired
 	private TransactionService transactionService;
 	
-	@RequestMapping(path = "/retrieveAccountTrxns", produces = "application/json", method = RequestMethod.POST)
+	@RequestMapping(path = "/retrieveAccountTrxns", produces = "application/json", method = RequestMethod.GET)
 	@ResponseBody
 	public AccountTransactions retrieveAccountTransactions(@RequestBody TransactionSearch search) {
 		

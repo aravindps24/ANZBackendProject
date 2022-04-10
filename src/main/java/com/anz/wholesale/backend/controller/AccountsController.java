@@ -23,7 +23,7 @@ public class AccountsController {
 	@Autowired
 	private AccountsService accountsService;
 	
-	@RequestMapping(path = "/retrieveCustomerAccounts", produces = "application/json", method = RequestMethod.POST)
+	@RequestMapping(path = "/retrieveCustomerAccounts", produces = "application/json", method = RequestMethod.GET)
 	@ResponseBody
 	public CustomerAccounts retrieveCustomerAccounts(@RequestBody AccountSearch search) {
 		
